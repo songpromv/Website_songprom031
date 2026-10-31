@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แฟ้มสะสมผลงาน - ทรงพรหมณ์ วิเศษศรี</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Prompt -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Prompt', 'sans-serif'],
+                    },
+                    colors: {
+                        techBlue: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            800: '#1e40af',
+                            900: '#0f172a',
+                            950: '#0b0f19',
+                        },
+                        amberGold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #fbbf24 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; color: black !important; }
+            .glass-card { background: none !important; border: 1px solid #ccc !important; }
+        }
+    </style>
+</head>
+<body class="bg-techBlue-950 text-slate-100 font-sans antialiased min-h-screen selection:bg-amberGold-500 selection:text-techBlue-950">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-card no-print">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-amberGold-500 flex items-center justify-center text-techBlue-950 font-bold text-lg">
+                        <i class="fa-solid => fa-bolt"></i>
+                    </div>
+                    <span class="font-bold text-lg tracking-wide text-white">SONGPROM.V</span>
+                </div>
+                <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+                    <a href="#about" class="hover:text-amberGold-400 transition-colors">เกี่ยวกับ</a>
+                    <a href="#experience" class="hover:text-amberGold-400 transition-colors">ประสบการณ์</a>
+                    <a href="#education" class="hover:text-amberGold-400 transition-colors">การศึกษา</a>
+                    <a href="#skills" class="hover:text-amberGold-400 transition-colors">ทักษะ</a>
+                    <a href="#contact" class="hover:text-amberGold-400 transition-colors">ติดต่อ</a>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button onclick="window.print()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs sm:text-sm font-medium border border-slate-700 text-slate-200 flex items-center gap-2 transition-all">
+                        <i class="fa-solid fa-print text-amberGold-400"></i>
+                        <span>พิมพ์ / พิมพ์ PDF</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero / Profile Section -->
+    <section id="about" class="pt-28 pb-16 md:pt-36 md:pb-24 px-4 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            
+            <!-- Avatar Column -->
+            <div class="md:col-span-5 lg:col-span-4 flex justify-center">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-amberGold-500 to-techBlue-500 rounded-2xl blur opacity-40 group-hover:opacity-75 transition duration-500"></div>
+                    <div class="relative w-64 h-80 sm:w-72 sm:h-96 rounded-2xl overflow-hidden bg-slate-800 border-2 border-slate-700 shadow-2xl">
+                        <img src="รูปทรงพรหมณ์.jpg" 
+                             alt="ทรงพรหมณ์ วิเศษศรี" 
+                             class="w-full h-full object-cover object-center"
+                             onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'" />
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-techBlue-950 via-techBlue-950/70 to-transparent p-4 text-center">
+                            <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-amberGold-500 text-techBlue-950 mb-1">
+                                <i class="fa-solid fa-briefcase mr-1"></i> ประสบการณ์ 3 ปี
+                            </span>
+                            <p class="text-xs text-slate-300">สาขาไฟฟ้ากำลัง & เทคโนโลยีเครือข่าย</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Info Column -->
+            <div class="md:col-span-7 lg:col-span-8 text-left space-y-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-techBlue-900/80 border border-techBlue-500/30 text-amberGold-400 text-xs sm:text-sm font-medium">
+                    <i class="fa-solid fa-certificate"></i> ผู้ช่วยช่างเทคนิคไฟฟ้า & เน็ตเวิร์ค
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-white">
+                    นายทรงพรหมณ์ <span class="gradient-text">วิเศษศรี</span>
+                </h1>
+                <p class="text-lg font-medium text-slate-300">
+                    Songprom Visetsri
+                </p>
+                <p class="text-slate-400 leading-relaxed text-sm sm:text-base">
+                    สำร็จการศึกษาระดับ ปวส. จากวิทยาลัยเทคนิคหาดใหญ่ สาขาไฟฟ้ากำลัง มีทักษะทางด้านงานช่างเป็นอย่างดี มีประสบการณ์ทำงานรวม 3 ปี ทางด้านงานไฟฟ้า เช่น งานเดินสายไฟฟ้า, สายสัญญาณ, สายไฟเบอร์ออฟติก, งานติดตั้งอุปกรณ์ไฟฟ้า, ระบบ CCTV และงานระบบกันขโมย
+                </p>
+
+                <!-- Personal Info Mini Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-xs sm:text-sm">
+                    <div class="glass-card p-3 rounded-xl">
+                        <span class="text-slate-400 block text-xs">อายุ</span>
+                        <span class="font-semibold text-slate-200">21 ปี (15 ธ.ค. 2546)</span>
+                    </div>
+                    <div class="glass-card p-3 rounded-xl">
+                        <span class="text-slate-400 block text-xs">สัญชาติ / ศาสนา</span>
+                        <span class="font-semibold text-slate-200">ไทย / พุทธ</span>
+                    </div>
+                    <div class="glass-card p-3 rounded-xl col-span-2 sm:col-span-1">
+                        <span class="text-slate-400 block text-xs">ที่อยู่</span>
+                        <span class="font-semibold text-slate-200 truncate block">อ.ยะหา จ.ยะลา</span>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="pt-4 flex flex-wrap gap-3">
+                    <a href="tel:+66944956732" class="px-5 py-2.5 rounded-xl bg-amberGold-500 hover:bg-amberGold-400 text-techBlue-950 font-bold text-sm flex items-center gap-2 transition-all shadow-lg shadow-amberGold-500/20">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>โทร 094-495-6732</span>
+                    </a>
+                    <a href="mailto:songprom.visetsri@gmail.com" class="px-5 py-2.5 rounded-xl glass-card hover:bg-slate-800 text-white font-medium text-sm flex items-center gap-2 transition-all">
+                        <i class="fa-solid fa-envelope text-amberGold-400"></i>
+                        <span>ส่งอีเมล</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience" class="py-16 bg-slate-900/50 border-y border-slate-800/80">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex items-center gap-3 mb-10">
+                <div class="w-10 h-10 rounded-xl bg-amberGold-500/10 border border-amberGold-500/30 flex items-center justify-center text-amberGold-400 font-bold">
+                    <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white">ประวัติการทำงาน</h2>
+                    <p class="text-xs sm:text-sm text-slate-400">ประสบการณ์ทำงานรวมกว่า 3 ปี ในสายงานช่างเทคนิคและไฟฟ้า</p>
+                </div>
+            </div>
+
+            <div class="relative border-l-2 border-slate-700/80 ml-4 md:ml-6 space-y-8">
+                
+                <!-- Experience Item 1 -->
+                <div class="relative pl-6 sm:pl-8 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-amberGold-500 border-4 border-techBlue-950 group-hover:scale-125 transition-transform"></div>
+                    <div class="glass-card p-5 rounded-2xl hover:border-amberGold-500/40 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+                            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                                หจก.ลีโอเน็ต คอมพิวเตอร์ แอนด์ เซอร์วิส
+                            </h3>
+                            <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-amberGold-500/10 border border-amberGold-500/30 text-amberGold-400 w-max">
+                                2567 - 2568
+                            </span>
+                        </div>
+                        <p class="text-amberGold-400 font-medium text-sm mb-3">ตำแหน่ง: รองหัวหน้าช่างเทคนิค</p>
+                        <ul class="space-y-2 text-sm text-slate-300">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-amberGold-400 mt-1"></i>
+                                <span>ซ่อมและติดตั้งระบบ CCTV (กล้องวงจรปิด)</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-amberGold-400 mt-1"></i>
+                                <span>ซ่อมระบบกันขโมยบ้าน และระบบประตูคีย์การ์ด (Keycard Door Lock)</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-amberGold-400 mt-1"></i>
+                                <span>ติดตั้งเสาอัจฉริยะ (Smart Pole) ในพื้นที่สวนสัตว์สงขลา</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-amberGold-400 mt-1"></i>
+                                <span>ร่วมงานในฐานะทีม Outsource ของบริษัท CMS ดูแลและซ่อมบำรุงระบบ CCTV ของธนาคารไทยพาณิชย์ทั่วประเทศ</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="relative pl-6 sm:pl-8 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-techBlue-500 border-4 border-techBlue-950 group-hover:scale-125 transition-transform"></div>
+                    <div class="glass-card p-5 rounded-2xl hover:border-techBlue-500/40 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+                            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                                หจก. เจ เอ็น เน็ตเวิร์ค แอนด์ คอมมิวนิเคชั่น
+                            </h3>
+                            <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-techBlue-500/10 border border-techBlue-500/30 text-techBlue-400 w-max">
+                                2567 - 2568
+                            </span>
+                        </div>
+                        <p class="text-techBlue-400 font-medium text-sm mb-3">ตำแหน่ง: ผู้ช่วยช่างเทคนิค</p>
+                        <ul class="space-y-2 text-sm text-slate-300">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-techBlue-400 mt-1"></i>
+                                <span>งานเดินสาย LAN และติดตั้งเซ็ตระบบเน็ตเวิร์คองค์กร</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-techBlue-400 mt-1"></i>
+                                <span>ซ่อมระบบอินเตอร์เน็ตและสายไฟเบอร์ออฟติก (Fiber Optic) ภายใต้การดูแลของบริษัท CAT</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 3 -->
+                <div class="relative pl-6 sm:pl-8 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-500 border-4 border-techBlue-950 group-hover:scale-125 transition-transform"></div>
+                    <div class="glass-card p-5 rounded-2xl hover:border-slate-500/40 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+                            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                                บจก.ไฮเรศ เอ็นจิเนียริ่ง แอนด์ เซอร์วิส
+                            </h3>
+                            <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-slate-700 border border-slate-600 text-slate-300 w-max">
+                                2564 - 2565
+                            </span>
+                        </div>
+                        <p class="text-slate-300 font-medium text-sm mb-3">ตำแหน่ง: ผู้ช่วยช่างเทคนิคไฟฟ้า</p>
+                        <ul class="space-y-2 text-sm text-slate-300">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-slate-400 mt-1"></i>
+                                <span>ซ่อมและตรวจเช็กลองมอเตอร์ไฟฟ้าโรงงานอุตสาหกรรม</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-slate-400 mt-1"></i>
+                                <span>ซ่อมปั๊มน้ำและระบบหมุนเวียนน้ำ</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-slate-400 mt-1"></i>
+                                <span>ช่วยออกแบบระบบไฟฟ้าเบื้องต้นและงานระบบประปาโรงงาน</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Skills Container -->
+    <div class="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+        <!-- Education Section (Left Column) -->
+        <section id="education" class="lg:col-span-5 space-y-6">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-xl bg-amberGold-500/10 border border-amberGold-500/30 flex items-center justify-center text-amberGold-400 font-bold">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-white">ประวัติการศึกษา</h2>
+                    <p class="text-xs text-slate-400">ระดับวุฒิการศึกษาและเกรดเฉลี่ย</p>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Education Item 1 -->
+                <div class="glass-card p-5 rounded-2xl relative overflow-hidden border-l-4 border-amberGold-500">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-amberGold-500/20 text-amberGold-400">ปวส.</span>
+                            <h3 class="text-lg font-bold text-white mt-2">วิทยาลัยเทคนิคหาดใหญ่</h3>
+                            <p class="text-sm text-slate-300">สาขา ไฟฟ้ากำลัง</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs text-slate-400">GPA</span>
+                            <p class="text-2xl font-bold text-amberGold-400">3.39</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Item 2 -->
+                <div class="glass-card p-5 rounded-2xl relative overflow-hidden border-l-4 border-techBlue-500">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-techBlue-500/20 text-techBlue-400">ปวช.</span>
+                            <h3 class="text-lg font-bold text-white mt-2">วิทยาลัยเทคนิคยะลา</h3>
+                            <p class="text-sm text-slate-300">สาขา ไฟฟ้ากำลัง</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs text-slate-400">GPA</span>
+                            <p class="text-2xl font-bold text-techBlue-400">3.29</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soft Skills Highlight Box -->
+            <div class="glass-card p-5 rounded-2xl bg-gradient-to-br from-slate-900 to-techBlue-900/40 border border-slate-700/60 mt-6">
+                <h4 class="font-bold text-white text-sm mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-star text-amberGold-400"></i> จุดเด่นและทัศนคติการทำงาน
+                </h4>
+                <div class="flex flex-wrap gap-2 text-xs">
+                    <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 flex items-center gap-1.5">
+                        <i class="fa-solid fa-clock text-amberGold-400"></i> ตรงต่อเวลาสูง
+                    </span>
+                    <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 flex items-center gap-1.5">
+                        <i class="fa-solid fa-shield-halved text-amberGold-400"></i> ความรับผิดชอบสูง
+                    </span>
+                    <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 flex items-center gap-1.5">
+                        <i class="fa-solid fa-wrench text-amberGold-400"></i> มีความรู้เชี่ยวชาญช่างไฟฟ้า
+                    </span>
+                    <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 flex items-center gap-1.5">
+                        <i class="fa-solid fa-users text-amberGold-400"></i> ปรับตัวเข้ากับทีมได้ดี
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section (Right Column) -->
+        <section id="skills" class="lg:col-span-7 space-y-6">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-xl bg-amberGold-500/10 border border-amberGold-500/30 flex items-center justify-center text-amberGold-400 font-bold">
+                    <i class="fa-solid fa-screws-all"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-white">ทักษะความสามารถ</h2>
+                    <p class="text-xs text-slate-400">ความชำนาญทางเทคนิคและเครื่องมือปฏิบัติงาน</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                
+                <!-- Electrical & Wiring Skill -->
+                <div class="glass-card p-4 rounded-xl space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm font-semibold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-plug text-amberGold-400"></i> งานเดินสายไฟฟ้า & อุปกรณ์
+                        </span>
+                        <span class="text-xs text-amberGold-400 font-bold">95%</span>
+                    </div>
+                    <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
+                        <div class="bg-amberGold-500 h-2 rounded-full" style="width: 95%"></div>
+                    </div>
+                    <p class="text-xs text-slate-400">เดินสายไฟฟ้ากำลัง, ติดตั้งตู้ไฟ, ติดตั้งอุปกรณ์ไฟฟ้า</p>
+                </div>
+
+                <!-- CCTV & Security -->
+                <div class="glass-card p-4 rounded-xl space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm font-semibold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-video text-amberGold-400"></i> ระบบ CCTV & กันขโมย
+                        </span>
+                        <span class="text-xs text-amberGold-400 font-bold">90%</span>
+                    </div>
+                    <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
+                        <div class="bg-amberGold-500 h-2 rounded-full" style="width: 90%"></div>
+                    </div>
+                    <p class="text-xs text-slate-400">ติดตั้ง/ซ่อมกล้องวงจรปิด, ระบบกันขโมยบ้าน, คีย์การ์ด</p>
+                </div>
+
+                <!-- Network & Fiber Optic -->
+                <div class="glass-card p-4 rounded-xl space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm font-semibold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-network-wired text-techBlue-400"></i> ระบบ LAN & Fiber Optic
+                        </span>
+                        <span class="text-xs text-techBlue-400 font-bold">88%</span>
+                    </div>
+                    <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
+                        <div class="bg-techBlue-500 h-2 rounded-full" style="width: 88%"></div>
+                    </div>
+                    <p class="text-xs text-slate-400">เดินสาย LAN, สาย RG, ซ่อมและสไปลซ์สายไฟเบอร์ออฟติก</p>
+                </div>
+
+                <!-- Motor & Pump Maintenance -->
+                <div class="glass-card p-4 rounded-xl space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm font-semibold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-gears text-techBlue-400"></i> ซ่อมมอเตอร์ & ปั๊มน้ำ
+                        </span>
+                        <span class="text-xs text-techBlue-400 font-bold">85%</span>
+                    </div>
+                    <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
+                        <div class="bg-techBlue-500 h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                    <p class="text-xs text-slate-400">ตรวจเช็กซ่อมมอเตอร์ไฟฟ้าโรงงาน, ซ่อมปั๊มน้ำ</p>
+                </div>
+
+            </div>
+
+            <!-- Skill Tags Badges -->
+            <div class="glass-card p-5 rounded-2xl mt-4">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">เชี่ยวชาญสายงาน (Skill Tags)</h4>
+                <div class="flex flex-wrap gap-2 text-xs">
+                    <span class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors">สาย LAN</span>
+                    <span class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors">สาย RG</span>
+                    <span class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors">Fiber Optic</span>
+                    <span class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors">ระบบ CCTV</span>
+                    <span class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors">ระบบประตูคีย์การ์ด</span>
+                    <span class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors">งานติดตั้งเสาอัจฉริยะ</span>
+                    <span class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors">การซ่อมปั๊มน้ำ</span>
+                    <span class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors">ออกแบบระบบประปา/ไฟฟ้า</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 text-center space-y-8">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-amberGold-500/10 text-amberGold-400 border border-amberGold-500/30 text-xl font-bold mb-2">
+                <i class="fa-solid fa-address-book"></i>
+            </div>
+            <h2 class="text-3xl font-bold text-white">สนใจร่วมงานหรือสอบถามข้อมูลเพิ่มเติม</h2>
+            <p class="text-slate-400 max-w-xl mx-auto text-sm sm:text-base">
+                พร้อมเริ่มงาน สามารถปฏิบัติงานเทคนิค งานไฟฟ้า และงานติดตั้งระบบเน็ตเวิร์ค CCTV ได้อย่างมีประสิทธิภาพ
+            </p>
+
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left pt-4">
+                
+                <!-- Phone Card -->
+                <a href="tel:+66944956732" class="glass-card p-5 rounded-2xl hover:border-amberGold-500/50 transition-all group">
+                    <div class="w-10 h-10 rounded-xl bg-amberGold-500/10 flex items-center justify-center text-amberGold-400 mb-3 group-hover:bg-amberGold-500 group-hover:text-techBlue-950 transition-all">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 block">เบอร์โทรศัพท์</span>
+                    <span class="text-base font-bold text-white group-hover:text-amberGold-400 transition-colors">+66 94 495 6732</span>
+                </a>
+
+                <!-- Email Card -->
+                <a href="mailto:songprom.visetsri@gmail.com" class="glass-card p-5 rounded-2xl hover:border-amberGold-500/50 transition-all group">
+                    <div class="w-10 h-10 rounded-xl bg-amberGold-500/10 flex items-center justify-center text-amberGold-400 mb-3 group-hover:bg-amberGold-500 group-hover:text-techBlue-950 transition-all">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 block">อีเมล</span>
+                    <span class="text-xs sm:text-sm font-bold text-white break-all group-hover:text-amberGold-400 transition-colors">songprom.visetsri@gmail.com</span>
+                </a>
+
+                <!-- Address Card -->
+                <div class="glass-card p-5 rounded-2xl">
+                    <div class="w-10 h-10 rounded-xl bg-amberGold-500/10 flex items-center justify-center text-amberGold-400 mb-3">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 block">ที่อยู่</span>
+                    <span class="text-xs sm:text-sm font-semibold text-slate-200">9/3 ม.3 ต.ตาซี อ.ยะหา จ.ยะลา 95120</span>
+                </div>
+
+            </div>
+
+            <!-- Footer Copy -->
+            <div class="pt-12 text-xs text-slate-500 border-t border-slate-800">
+                © 2026 นายทรงพรหมณ์ วิเศษศรี — Online Portfolio / Resume.
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
